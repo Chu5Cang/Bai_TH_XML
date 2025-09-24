@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hospital xmlns="http://example.com/hospital" xmlns:pat="http://example.com/patient" xmlns:doc="http://example.com/doctor" xmlns:app="http://example.com/appointment">
-    <app:appointment id="a001" date="2025-9-17" status="Da Kham">
-        <pat:patient id="p001" name="Lê Thị C" dob="1985-11-20"></pat:patient>
-        <doc:doctor id="d001" name="Phạm Thị D" specialty="Tim mạch"></doc:doctor>
-    </app:appointment>
+<!DOCTYPE hospital SYSTEM 'benhvien.dtd'>
+<hospital>
+    <appointment id="a001" date="2025-9-17" status="Da_kham">
+        <patient id="p001" name="Lê Thị C" dob="1985-11-20"></patient>
+        <doctor id="d001" name="Phạm Thị D" specialty="Tim mạch"></doctor>
+    </appointment>
     
-    <app:appointment id="a002" date="2025-9-19" status="Chua Kham">
-        <pat:patient id="p002" name="Nguyen Van C" dob="1985-11-20"></pat:patient>
-        <doc:doctor id="d002" name="Phạm Van A" specialty="Nội tổng quát"></doc:doctor>
-    </app:appointment>
+    <appointment id="a002" date="2025-9-19" status="Chua_kham">
+        <patient id="p002" name="Nguyen Van C" dob="1985-11-20"></patient>
+        <doctor id="d002" name="Phạm Van A" specialty="Nội tổng quát"></doctor>
+    </appointment>
     
 </hospital>

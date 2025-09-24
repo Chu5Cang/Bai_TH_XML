@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE elearning SYSTEM 'khoahoc.dtd'>
 
-<elearning xmlns:course="http://example.com/course"  xmlns:instructor="http://example.com/instructor" xmlns:student="http://example.com/student">
-    <course:course id="c001" title="Lap Trinh Web" category="Lập trình">
-        <instructor:instructor id="i001" name="Nguyen Thi A" email="nta@gmail.com"></instructor:instructor>
-        <student:students>
-            <student:student id="s001" name="Truong Ba A" progress="50"></student:student>
-            <student:student id="s002" name="Truong Ba B" progress="30"></student:student>
-            <student:student id="s003" name="Truong Ba C" progress="60"></student:student>
-            <student:student id="s004" name="Truong Ba D" progress="30"></student:student>
-        </student:students>
-
-    </course:course>
+<elearning>
+    <course id="c001" title="Lap Trinh Web" category="Lập trình">
+        <instructor id="i001" name="Nguyen Thi A" email="nta@gmail.com"></instructor>
+        <students>
+            <student id="s001" name="Truong Ba A" progress="50"></student>
+            <student id="s002" name="Truong Ba B" progress="30"></student>
+            <student id="s003" name="Truong Ba C" progress="60"></student>
+            <student id="s004" name="Truong Ba D" progress="30"></student>
+        </students>
+    </course>
     
-    <course:course id="c002" title="Thiet ke UX/UI" category="Thiết Kế">
-        <instructor:instructor id="i002" name="Nguyen Van C" email="nvc@gmail.com"></instructor:instructor>
-        <student:students>
-            <student:student id="s001" name="Ngo Van Tai" progress="50"></student:student>
-            <student:student id="s002" name="Tran Van Thai" progress="30"></student:student>
-            <student:student id="s003" name="Nguyen Thi Kim Anh" progress="60"></student:student>
-            <student:student id="s004" name="Truong Nguyen Hoang Anh" progress="30"></student:student>
-        </student:students>
-        
-    </course:course>
+    <course id="c002" title="Thiet ke UX/UI" category="Thiết Kế">
+        <instructor id="i002" name="Nguyen Van C" email="nvc@gmail.com"></instructor>
+        <students>
+            <student id="s005" name="Ngo Van Tai" progress="50"></student>
+            <student id="s006" name="Tran Van Thai" progress="30"></student>
+            <student id="s007" name="Nguyen Thi Kim Anh" progress="60"></student>
+            <student id="s008" name="Truong Nguyen Hoang Anh" progress="30"></student>
+        </students>
+    </course>
 
 
 </elearning>
