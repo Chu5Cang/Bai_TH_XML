@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students xmlns:xstu="http://www.w3.org/2001/XMLSchema-instance"
+          xstu:noNamespaceSchemaLocation="students.xsd">
+    <student id="SV001">
+        <name>Truong Ba Hai Chau</name>
+        <dob>2004-02-25</dob>
+        <major>Ky Thuat Phan Mem</major>
+    </student>
+    <student id="SV002">
+        <name>Truong Van B</name>
+        <dob>2004-11-22</dob>
+        <major>Ky Thuat Phan Mem</major>
+    </student>
+</students>
