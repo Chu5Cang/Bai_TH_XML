@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<quanan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:SchemaLocation="quanan.xsd"
+        xmlns="http://www.example.com/quanan">
+    <!-- Nhân viên -->
+    <nhanvien>
+        <manv>NV001</manv>
+        <tennv>Nguyễn Văn A</tennv>
+        <sdt>0905123456</sdt>
+        <diachi>123 Lê Lợi, Q1</diachi>
+        <gioitinh>Nam</gioitinh>
+        <username>nguyenvana</username>
+        <password>passWord1234</password>
+    </nhanvien>
+    <nhanvien>
+        <manv>NV002</manv>
+        <tennv>Trần Thị B</tennv>
+        <sdt>0912345678</sdt>
+        <diachi>45 Nguyễn Trãi, Q5</diachi>
+        <gioitinh>Nữ</gioitinh>
+        <username>tranthib</username>
+        <password>myPassword22</password>
+    </nhanvien>
+    <nhanvien>
+        <manv>NV003</manv>
+        <tennv>Lê Văn C</tennv>
+        <sdt>0987654321</sdt>
+        <diachi>78 Hai Bà Trưng, Q3</diachi>
+        <gioitinh>Nam</gioitinh>
+        <username>levanc</username>
+        <password>securePass33</password>
+    </nhanvien>
+    <nhanvien>
+        <manv>NV004</manv>
+        <tennv>Phạm Thị D</tennv>
+        <sdt>0978123456</sdt>
+        <diachi>56 Điện Biên Phủ, Q10</diachi>
+        <gioitinh>Nữ</gioitinh>
+        <username>phamthid</username>
+        <password>password4567</password>
+    </nhanvien>
+    <nhanvien>
+        <manv>NV005</manv>
+        <tennv>Hoàng Văn E</tennv>
+        <sdt>0933222111</sdt>
+        <diachi>12 Võ Thị Sáu, Q1</diachi>
+        <gioitinh>Nam</gioitinh>
+        <username>hoangvane</username>
+        <password>helloWorld88</password>
+    </nhanvien>
+    
+    <!-- Món -->
+    <mon>
+        <mamon>M001</mamon>
+        <tenmon>Phở Bò</tenmon>
+        <gia>50000</gia>
+        <hinhanh>pho_bo.jpg</hinhanh>
+    </mon>
+    <mon>
+        <mamon>M002</mamon>
+        <tenmon>Bún Chả</tenmon>
+        <gia>45000</gia>
+        <hinhanh>bun_cha.jpg</hinhanh>
+    </mon>
+    <mon>
+        <mamon>M003</mamon>
+        <tenmon>Bánh Mì</tenmon>
+        <gia>20000</gia>
+        <hinhanh>banh_mi.jpg</hinhanh>
+    </mon>
+    <mon>
+        <mamon>M004</mamon>
+        <tenmon>Cơm Tấm</tenmon>
+        <gia>40000</gia>
+        <hinhanh>com_tam.jpg</hinhanh>
+    </mon>
+    <mon>
+        <mamon>M005</mamon>
+        <tenmon>Gỏi Cuốn</tenmon>
+        <gia>30000</gia>
+        <hinhanh>goi_cuon.jpg</hinhanh>
+    </mon>
+    
+    <!-- Bàn -->
+    <ban>
+        <tenban>Bàn 1</tenban>
+        <soban>1</soban>
+    </ban>
+    <ban>
+        <tenban>Bàn 2</tenban>
+        <soban>2</soban>
+    </ban>
+    <ban>
+        <tenban>Bàn 3</tenban>
+        <soban>3</soban>
+    </ban>
+    <ban>
+        <tenban>Bàn 4</tenban>
+        <soban>4</soban>
+    </ban>
+    <ban>
+        <tenban>Bàn 5</tenban>
+        <soban>5</soban>
+    </ban>
+    
+    <!-- Hóa đơn -->
+    <hoadon>
+        <sohd>HD001</sohd>
+        <ngaylap>2025-09-01</ngaylap>
+        <tongtien>150000</tongtien>
+        <manv>NV001</manv>
+        <soban>1</soban>
+    </hoadon>
+    <hoadon>
+        <sohd>HD002</sohd>
+        <ngaylap>2025-09-02</ngaylap>
+        <tongtien>200000</tongtien>
+        <manv>NV002</manv>
+        <soban>2</soban>
+    </hoadon>
+    <hoadon>
+        <sohd>HD003</sohd>
+        <ngaylap>2025-09-03</ngaylap>
+        <tongtien>100000</tongtien>
+        <manv>NV001</manv>
+        <soban>3</soban>
+    </hoadon>
+    <hoadon>
+        <sohd>HD004</sohd>
+        <ngaylap>2025-09-04</ngaylap>
+        <tongtien>180000</tongtien>
+        <manv>NV002</manv>
+        <soban>4</soban>
+    </hoadon>
+    <hoadon>
+        <sohd>HD005</sohd>
+        <ngaylap>2025-09-05</ngaylap>
+        <tongtien>250000</tongtien>
+        <manv>NV003</manv>
+        <soban>5</soban>
+    </hoadon>
+    
+    <!-- Chi tiết hóa đơn -->
+    <cthd>
+        <sohd>HD001</sohd>
+        <mamon>M001</mamon>
+        <soluong>1</soluong>
+    </cthd>
+    <cthd>
+        <sohd>HD001</sohd>
+        <mamon>M002</mamon>
+        <soluong>2</soluong>
+    </cthd>
+    <cthd>
+        <sohd>HD002</sohd>
+        <mamon>M003</mamon>
+        <soluong>1</soluong>
+    </cthd>
+    <cthd>
+        <sohd>HD003</sohd>
+        <mamon>M004</mamon>
+        <soluong>3</soluong>
+    </cthd>
+    <cthd>
+        <sohd>HD004</sohd>
+        <mamon>M005</mamon>
+        <soluong>2</soluong>
+    </cthd>
+    <cthd>
+        <sohd>HD005</sohd>
+        <mamon>M002</mamon>
+        <soluong>4</soluong>
+    </cthd>
+</quanan>

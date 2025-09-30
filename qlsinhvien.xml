@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dssv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="qlsinhvien.xsd">
+    <khoa>
+        <ma>K001</ma>
+        <ten>congnghethongtin</ten>
+    </khoa>
+    <lop>
+        <makhoa>K001</makhoa>
+        <ma>L001</ma>
+        <ten>kythuatphanmem</ten>
+    </lop>
+    <lop>
+        <makhoa>K001</makhoa>
+        <ma>L002</ma>
+        <ten>khoahocmaytinh</ten>
+    </lop>
+    <sinhvien>
+        <malop>L001</malop>
+        <mssv>KTPM221101</mssv>
+        <hoten>Trương Văn A</hoten>
+        <email>tva@gmail.com</email>
+        <diachi>Cần Thơ</diachi>
+        <sdt>0932582774</sdt>
+    </sinhvien>
+    <sinhvien>
+        <malop>L001</malop>
+        <mssv>KTPM221102</mssv>
+        <hoten>Huỳnh văn A</hoten>
+        <email>hva@gmail.com</email>
+        <diachi>Cần Thơ</diachi>
+        <sdt>0934182234</sdt>
+    </sinhvien>
+    <sinhvien>
+        <malop>L002</malop>
+        <mssv>KHMT221101</mssv>
+        <hoten>Huỳnh Thị C</hoten>
+        <email>htc@gmail.com</email>
+        <diachi>Cần Thơ</diachi>
+        <sdt>0934185234</sdt>
+    </sinhvien>
+</dssv>

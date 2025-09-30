@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Kiểu mã và tên dùng chung Khoa va Lop-->
+    <xs:simpleType name="MaLopKhoaType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="TenType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z]+"/>
+            <xs:maxLength value="50"></xs:maxLength>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- Kiểu số điện thoại Sinh vien-->
+    <xs:simpleType name="PhoneType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0\d{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="dssv">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="khoa" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ma" type="MaLopKhoaType"></xs:element>
+                            <xs:element name="ten" type="TenType"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="lop" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="makhoa" type="MaLopKhoaType"></xs:element>
+                            <xs:element name="ma" type="MaLopKhoaType"></xs:element>
+                            <xs:element name="ten" type="TenType"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="sinhvien" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="malop" type="MaLopKhoaType"></xs:element>
+                            <xs:element name="mssv">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="hoten">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="email">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="150"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="diachi" type="xs:string"></xs:element>
+                            <xs:element name="sdt" type="PhoneType"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- Khóa chính -->
+        <xs:key name="KhoaKey">
+            <xs:selector xpath="khoa"></xs:selector>
+            <xs:field xpath="ma"></xs:field>
+        </xs:key>
+        
+        <xs:key name="LopKey">
+            <xs:selector xpath="lop"></xs:selector>
+            <xs:field xpath="ma"></xs:field>
+        </xs:key>
+        
+        <xs:key name="SinhVienKey">
+            <xs:selector xpath="sinhvien"></xs:selector>
+            <xs:field xpath="mssv"></xs:field>
+        </xs:key>
+        
+        <!-- Khóa Ngoại -->
+        <xs:keyref name="KhoaLopRef" refer="KhoaKey">
+            <xs:selector xpath="lop"></xs:selector>
+            <xs:field xpath="makhoa"></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref name="LopSinhVienRef" refer="LopKey">
+            <xs:selector xpath="sinhvien"></xs:selector>
+            <xs:field xpath="malop"></xs:field>
+        </xs:keyref>
+
+    </xs:element>
+</xs:schema>

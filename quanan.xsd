@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.example.com/quanan"
+           xmlns="http://www.example.com/quanan"
+           elementFormDefault="qualified">
+    
+    <xs:element name="quanan">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Nhân viên -->
+                <xs:element name="nhanvien" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="manv">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="tennv">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="sdt">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="0\d{9}"></xs:pattern>
+                                        <xs:maxLength value="10"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="diachi" type="xs:string"></xs:element>
+                            <xs:element name="gioitinh">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="5"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="username">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="6"></xs:minLength>
+                                        <xs:maxLength value="50"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="password">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="10"></xs:minLength>
+                                        <xs:maxLength value="50"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Món -->
+                <xs:element name="mon" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mamon">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="tenmon">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="gia" type="xs:float"></xs:element>
+                            <xs:element name="hinhanh" type="xs:string"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Bàn -->
+                <xs:element name="ban" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tenban">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="soban" type="xs:integer"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Hóa đơn -->
+                <xs:element name="hoadon" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="sohd" type="xs:integer"></xs:element>
+                            <xs:element name="ngaylap" type="xs:date"></xs:element>
+                            <xs:element name="tongtien" type="xs:float"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Chi tiết khóa đơn -->
+                <xs:element name="cthd" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="sohd" type="xs:integer"></xs:element>
+                            <xs:element name="mamon">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="soluong" type="xs:integer"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- Khóa chính -->
+        
+        <xs:key name="NhanVienKey">
+            <xs:selector xpath="nhanvien"></xs:selector>
+            <xs:field xpath="manv"></xs:field>
+        </xs:key>
+        
+        <xs:key name="MonKey">
+            <xs:selector xpath="mon"></xs:selector>
+            <xs:field xpath="mamon"></xs:field>
+        </xs:key>
+        
+        <xs:key name="BanKey">
+            <xs:selector xpath="ban"></xs:selector>
+            <xs:field xpath="soban"></xs:field>
+        </xs:key>
+        
+        <xs:key name="HoaDonKey">
+            <xs:selector xpath="hoadon"></xs:selector>
+            <xs:field xpath="sohd"></xs:field>
+        </xs:key>
+        
+        <!-- Khóa ngoại -->
+        <xs:keyref name="HoaDonNVRef" refer="NhanVienKey">
+            <xs:selector xpath="hoadon"></xs:selector>
+            <xs:field xpath="manv"></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref name="HoaDonMonRef" refer="MonKey">
+            <xs:selector xpath="hoadon"></xs:selector>
+            <xs:field xpath="mamon"></xs:field>
+        </xs:keyref>
+        
+        <xs:keyref name="HoaDonBanRef" refer="BanKey">
+            <xs:selector xpath="hoadon"></xs:selector>
+            <xs:field xpath="soban"></xs:field>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>
